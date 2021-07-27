@@ -5,7 +5,7 @@
   "author": "BogdanKostyuk<bogdankostyuk12@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node ./src/server.ts",
+    "start": "ts-node /src/server.ts",
     "serve": "ts-node-dev --watch ./src/graphql/*.graphql --no-notify --respawn --transpile-only ./src/server.ts",
     "seed": "ts-node ./seed.ts"
   },
