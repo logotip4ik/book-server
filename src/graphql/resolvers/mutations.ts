@@ -27,6 +27,7 @@ export const Mutation = {
     });
     const secureUser: SecureUserInput = { ...user };
     delete secureUser.password;
+    // @ts-ignore
     return { token: jwt.sign(secureUser, supersecret) };
   },
   async createBook(
@@ -135,6 +136,7 @@ export const Mutation = {
     const author: SecureUserInput = { ...user };
     delete author.password;
 
+    // @ts-ignore
     return { token: jwt.sign(author, supersecret) };
   },
 };
