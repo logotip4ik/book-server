@@ -1,0 +1,6 @@
+.env
+node_modules
+migrations
+package-lock.json
+seed.ts
+seedData.*

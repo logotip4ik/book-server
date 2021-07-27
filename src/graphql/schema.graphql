@@ -1,0 +1,87 @@
+type Author {
+  id: Int!
+  name: String!
+  email: String!
+  about: String!
+  books: [Book]
+}
+type User {
+  id: Int!
+  name: String!
+  email: String!
+  about: String!
+  isAuthor: Boolean!
+  isStuff: Boolean!
+  books: [Book]
+  starredBooks: [Book]
+}
+input UserLoginInput {
+  email: String!
+  password: String!
+}
+input UserInput {
+  name: String!
+  email: String!
+  about: String
+  isAuthor: Boolean!
+  isStuff: Boolean
+  password: String!
+}
+
+type Book {
+  id: Int!
+  title: String!
+  content: String
+  author: Author!
+  authorId: Int!
+  image: String
+  epilogue: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input StarBook {
+  id: Int!
+}
+input BookUpdateInput {
+  id: Int!
+  title: String
+  content: String
+  epilogue: String
+  image: String
+}
+input BookInput {
+  title: String!
+  content: String!
+  epilogue: String!
+  image: String!
+  author: Int!
+}
+
+type AuthPayLoad {
+  token: String!
+}
+type Success {
+  success: Boolean!
+}
+
+type Query {
+  getAllBooks(first: Int, offset: Int): [Book]
+  getOneBook(id: Int!): Book
+
+  getAllAuthors(first: Int, offset: Int): [Author]
+  getOneAuthor(id: Int!): Author
+
+  getMe: User
+}
+
+type Mutation {
+  createBook(data: BookInput!): Book!
+  updateBook(data: BookUpdateInput!): Book!
+
+  starBook(data: StarBook!): Success!
+  unStarBook(data: StarBook!): Success!
+
+  createUser(data: UserInput!): AuthPayLoad!
+  loginUser(data: UserLoginInput!): AuthPayLoad!
+}

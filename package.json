@@ -1,0 +1,44 @@
+{
+  "name": "book-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "BogdanKostyuk<bogdankostyuk12@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node ./src/server.ts",
+    "serve": "ts-node-dev --watch ./src/graphql/*.graphql --no-notify --respawn --transpile-only ./src/server.ts",
+    "seed": "ts-node ./seed.ts"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/faker": "^5.5.7",
+    "@types/graphql-fields": "^1.3.4",
+    "@types/jsonwebtoken": "^8.5.4",
+    "@types/node": "*",
+    "faker": "^5.5.3",
+    "helmet": "^4.6.0",
+    "prisma": "^2.27.0",
+    "ts-node": "^10.1.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.27.0",
+    "apollo-server": "^3.0.2",
+    "apollo-server-express": "^3.0.2",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1",
+    "graphql-fields": "^2.0.3",
+    "graphql-scalars": "^1.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "nexus": "^1.1.0"
+  }
+}
